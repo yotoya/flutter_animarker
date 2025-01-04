@@ -20,13 +20,12 @@ class AnimarkerControllerDescription {
   final Curve curve;
   final Duration duration;
   final Duration rippleDuration;
-  final Duration rippleIdleAfter;
 
   const AnimarkerControllerDescription({
     required this.vsync,
-    this.useRotation = true,
-    this.onStopover,
-    this.onMarkerAnimation,
+    required this.onStopover,
+    required this.useRotation,
+    required this.onMarkerAnimation,
     this.angleThreshold = 1.5,
     this.isActiveTrip = true,
     this.runExpressAfter = 10,
@@ -36,7 +35,6 @@ class AnimarkerControllerDescription {
     this.rippleColor = Colors.red,
     this.duration = const Duration(milliseconds: 2500),
     this.rippleDuration = const Duration(milliseconds: 2000),
-    this.rippleIdleAfter = const Duration(seconds: 30),
   });
 
   factory AnimarkerControllerDescription.animarker(
@@ -54,7 +52,6 @@ class AnimarkerControllerDescription {
         onMarkerAnimation: onMarkerAnimation,
         onRippleAnimation: onRippleAnimation,
         onStopover: onStopover,
-        rippleIdleAfter: animarker.rippleIdleAfter,
         rippleColor: animarker.rippleColor,
         rippleDuration: animarker.rippleDuration,
         rippleRadius: animarker.rippleRadius,

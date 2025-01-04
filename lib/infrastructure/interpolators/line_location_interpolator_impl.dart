@@ -11,6 +11,7 @@ class LineLocationInterpolatorImpl<T extends ILatLng>
   late T begin;
   @override
   late T end;
+  //final ILatLng _previousPosition = ILatLng.empty();
   late Float32x4 float32x4FromVector;
   late Float32x4 float32x4Delta;
 
@@ -24,6 +25,8 @@ class LineLocationInterpolatorImpl<T extends ILatLng>
 
   @override
   bool get isStopped => begin == end;
+
+  //ILatLng get previousPosition => _previousPosition.isEmpty ? begin : _previousPosition;
 
   @override
   @protected
